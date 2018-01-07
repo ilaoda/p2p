@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:orientation="vertical">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#55000000"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_main_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            tools:ignore="Suspicious0dp"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iv_main_home"
+                android:layout_width="@dimen/buttom_tab_img_size"
+                android:layout_height="@dimen/buttom_tab_img_size"
+                android:src="@drawable/bottom01"/>
+            <TextView
+                android:id="@+id/tv_main_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/tab_normal_color"
+                android:text="首页"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_main_invest"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            tools:ignore="Suspicious0dp"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iv_main_invest"
+                android:layout_width="@dimen/buttom_tab_img_size"
+                android:layout_height="@dimen/buttom_tab_img_size"
+                android:src="@drawable/bottom03"/>
+            <TextView
+                android:id="@+id/tv_main_invest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/tab_normal_color"
+                android:text="投资"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_main_me"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            tools:ignore="Suspicious0dp"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iv_main_me"
+                android:layout_width="@dimen/buttom_tab_img_size"
+                android:layout_height="@dimen/buttom_tab_img_size"
+                android:src="@drawable/bottom05"/>
+            <TextView
+                android:id="@+id/tv_main_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/tab_normal_color"
+                android:text="资产"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_main_more"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            tools:ignore="Suspicious0dp"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iv_main_more"
+                android:layout_width="@dimen/buttom_tab_img_size"
+                android:layout_height="@dimen/buttom_tab_img_size"
+                android:src="@drawable/bottom07"/>
+            <TextView
+                android:id="@+id/tv_main_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/tab_normal_color"
+                android:text="更多"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

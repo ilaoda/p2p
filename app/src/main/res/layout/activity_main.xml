@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ilaoda.p2p.MainActivity">
+    android:orientation="vertical"
+    tools:context="com.ilaoda.p2p.activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--
+    添加 Fragment 到 Activity的布局中
 
-</android.support.constraint.ConstraintLayout>
+    Fragement 必须依赖 Activity
+
+    添加 Fragment 的两种方式：
+        * 直接添加在布局中, 定义一个 Framelayout,
+        * 程序运行时，动态将 Fragment 添加到 Activity 中。
+    -->
+
+    <FrameLayout
+        android:id="@+id/fl_main_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:ignore="Suspicious0dp"
+        />
+
+    <include layout="@layout/main_buttom"/>
+
+
+
+
+</LinearLayout>
