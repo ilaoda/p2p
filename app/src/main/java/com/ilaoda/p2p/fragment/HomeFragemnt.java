@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ilaoda.p2p.R;
+import com.ilaoda.p2p.common.UIUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,11 +42,23 @@ public class HomeFragemnt extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
+        // 注意：此处用了UIUtils后，导致fragment_home中的内容有些文本空白。
+        // 原因在于：context 为整个应用的 ???? MyApplication.context;
         View view = View.inflate(getActivity(), R.layout.fragment_home, null);
+        //View view = UIUtils.getView(R.layout.fragment_home);
         unbinder = ButterKnife.bind(this, view);
 
         initTitle();
+
+        initData();
         return view;
+    }
+
+    /**
+     * 从网络初始化数据
+     */
+    private void initData() {
     }
 
     /**

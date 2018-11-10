@@ -1,5 +1,6 @@
 package com.ilaoda.p2p.activity;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ilaoda.p2p.R;
+import com.ilaoda.p2p.common.ActivityManager;
+import com.ilaoda.p2p.common.UIUtils;
 import com.ilaoda.p2p.fragment.HomeFragemnt;
 import com.ilaoda.p2p.fragment.InvestFragment;
 import com.ilaoda.p2p.fragment.MeFragment;
@@ -75,8 +78,19 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);  // 自动生成
 
+        // 将当前Activity加入到 Stack 栈中统一管理
+        ActivityManager.getInstance().add(this);
+
         // 默认显示首页
         setSelectFragment(0);
+
+        // 模拟异常
+        /*String str = null;
+        // if("abc".equals(str)) {
+
+         if(str.equals("abc")) {
+
+         }*/
     }
 
 
@@ -154,7 +168,8 @@ public class MainActivity extends FragmentActivity {
 
                 // 当前tab改变图标和颜色
                 ivMainHome.setImageResource(R.drawable.bottom02);
-                tvMainHome.setTextColor(getResources().getColor(R.color.tab_selected_color));
+                // tvMainHome.setTextColor(getResources().getColor(R.color.tab_selected_color));
+                tvMainHome.setTextColor(UIUtils.getColor(R.color.tab_selected_color));
                 break;
 
             case 1:
@@ -170,7 +185,8 @@ public class MainActivity extends FragmentActivity {
 
                 // 当前tab改变图标和颜色
                 ivMainInvest.setImageResource(R.drawable.bottom04);
-                tvMainInvest.setTextColor(getResources().getColor(R.color.tab_selected_color));
+                //tvMainInvest.setTextColor(getResources().getColor(R.color.tab_selected_color));
+                tvMainInvest.setTextColor(UIUtils.getColor(R.color.tab_selected_color));
                 break;
 
             case 2:
@@ -186,7 +202,8 @@ public class MainActivity extends FragmentActivity {
 
                 // 当前tab改变图标和颜色
                 ivMainMe.setImageResource(R.drawable.bottom06);
-                tvMainMe.setTextColor(getResources().getColor(R.color.tab_selected_color));
+                //tvMainMe.setTextColor(getResources().getColor(R.color.tab_selected_color));
+                tvMainMe.setTextColor(UIUtils.getColor(R.color.tab_selected_color));
                 break;
 
             case 3:
@@ -202,12 +219,12 @@ public class MainActivity extends FragmentActivity {
 
                 // 当前tab改变图标和颜色
                 ivMainMore.setImageResource(R.drawable.bottom08);
-                tvMainMore.setTextColor(getResources().getColor(R.color.tab_selected_color));
+                //tvMainMore.setTextColor(getResources().getColor(R.color.tab_selected_color));
+                tvMainMore.setTextColor(UIUtils.getColor(R.color.tab_selected_color));
                 break;
 
             default:
                 break;
-
         }
 
         // 6. 提交事务, 这个时候，framgment 的声明周期才开始执行
@@ -244,11 +261,17 @@ public class MainActivity extends FragmentActivity {
         ivMainInvest.setImageResource(R.drawable.bottom03);
         ivMainMe.setImageResource(R.drawable.bottom05);
         ivMainMore.setImageResource(R.drawable.bottom07);
-
+        /*
         tvMainHome.setTextColor(getResources().getColor(R.color.tab_normal_color));
         tvMainInvest.setTextColor(getResources().getColor(R.color.tab_normal_color));
         tvMainMe.setTextColor(getResources().getColor(R.color.tab_normal_color));
         tvMainMore.setTextColor(getResources().getColor(R.color.tab_normal_color));
+        */
+
+        tvMainHome.setTextColor(UIUtils.getColor(R.color.tab_normal_color));
+        tvMainInvest.setTextColor(UIUtils.getColor(R.color.tab_normal_color));
+        tvMainMe.setTextColor(UIUtils.getColor(R.color.tab_normal_color));
+        tvMainMore.setTextColor(UIUtils.getColor(R.color.tab_normal_color));
     }
 
     private boolean flag = true;

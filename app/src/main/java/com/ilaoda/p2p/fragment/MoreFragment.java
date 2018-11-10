@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ilaoda.p2p.R;
+import com.ilaoda.p2p.common.UIUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,7 +41,8 @@ public class MoreFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = View.inflate(getActivity(), R.layout.fragment_invest, null);
+        // View view = View.inflate(getActivity(), R.layout.fragment_invest, null);
+        View view = UIUtils.getView(R.layout.fragment_invest);
         unbinder = ButterKnife.bind(this, view);
 
         initTitle();
