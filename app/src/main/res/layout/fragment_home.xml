@@ -7,7 +7,7 @@
 
     <include layout="@layout/common_title"/>
 
-    <ScrollView
+    <com.ilaoda.p2p.ui.MyScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -123,6 +123,6 @@
 
         </LinearLayout>
 
-    </ScrollView>
+    </com.ilaoda.p2p.ui.MyScrollView>
 
 </LinearLayout>

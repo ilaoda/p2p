@@ -6,11 +6,10 @@ import android.app.Activity;
 import java.util.Stack;
 
 /**
- *
  * 单例模式
  * 将项目所有的Activity加入到自定义的 栈中统一管理。
  * 包括：增加、删除当前、删除指定、删除所有、栈的大小等
- *
+ * <p>
  * Created by hbh on 2018/1/8.
  */
 
@@ -46,6 +45,7 @@ public class ActivityManager {
 
     /**
      * 添加 Activity到 栈中
+     *
      * @param activity
      */
     public void add(Activity activity) {
@@ -55,6 +55,7 @@ public class ActivityManager {
 
     /**
      * 从栈中删除指定的 Activity, 此处通过 getClass 对比。就是说是用一个Activity创建的。
+     *
      * @param activity
      */
     public void remove(Activity activity) {
@@ -78,11 +79,11 @@ public class ActivityManager {
         // 从后往前遍历并将相等删除，不会导致顺序问题。
         // 遍历栈中所有的 Activity
         // 注意此处遍历从未到首，要不会出现顺序问题，导致有些没有被删
-        for(int i = activityStack.size()-1; i>=0; i--) {
+        for (int i = activityStack.size() - 1; i >= 0; i--) {
             // 获取每个i 对应的Activity
             Activity currentActivity = activityStack.get(i);
             // 如果和传入的Activity 相等，就删除
-            if(currentActivity.getClass() == activity.getClass()) {
+            if (currentActivity.getClass() == activity.getClass()) {
                 // 先销毁当前的 Activity
                 currentActivity.finish();
                 // 再将栈中的该Acitivity从栈中移除
@@ -95,7 +96,6 @@ public class ActivityManager {
 
     /**
      * 删除当前的Activity
-     *
      */
     public void removeCurrentActivity() {
 
@@ -126,7 +126,7 @@ public class ActivityManager {
      */
     public void removeAllActivity() {
 
-        for (int i = activityStack.size()-1; i>=0; i--) {
+        for (int i = activityStack.size() - 1; i >= 0; i--) {
             // 获取每个Activity
             Activity currentActivity = activityStack.get(i);
             currentActivity.finish();
@@ -137,13 +137,12 @@ public class ActivityManager {
 
     /**
      * 返回栈 Stack 的大小，即 里面存放 Activity的个数；
+     *
      * @return
      */
     public int activityStackSize() {
         return activityStack.size();
     }
-
-
 
 
 }
